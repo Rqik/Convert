@@ -9,6 +9,7 @@
   width: 100%;
   flex-basis: 320px;
   //max-width: 320px;
+  justify-content: space-between;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -50,7 +51,14 @@
     gap: 35px;
   }
   &__ratio{
+    @include font-normal(12px, $fw:700  , $fc:$font-secondary-color)
     margin-left: auto;
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &-span{
+      border-bottom: 1px solid $font-main-color;
+    }
   }
+
 }

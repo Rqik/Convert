@@ -37,6 +37,7 @@
     @include font-normal($fs: 14px, $fw: 700, $fc: #4daae7)
   }
   &__caption{
+    white-space: nowrap;
     @include font-normal($fs: 12px, $fw: 300, $fc: $font-secondary-color);
   }
   &__current-value {
@@ -47,5 +48,9 @@
     padding: 10px 15px;
 
     gap: 35px;
+  }
+  &__ratio{
+    margin-left: auto;
+    display: flex;
   }
 }

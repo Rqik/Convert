@@ -1,32 +1,29 @@
-import React, {useEffect, useState} from 'react';
-import {Input} from './components/input/input';
-import {FinanceTodayProps} from './components/financeToday/financeToday';
-import {CurrencyList} from './type/interface';
-import {FinanceList} from './components/financeList/financeList';
-import axios from 'axios';
-
+import React, {useEffect} from 'react';
+import {Input} from './components/Input';
+import {FinanceList} from './components/FinanceList';
+import {useTypeSelector} from './hooks/useTypedSelector';
+import {useAction} from './hooks/useAction';
 
 function App() {
-
-  const [cbr, setCbr] = useState<CurrencyList>({})
+  const {currency, error, loading} = useTypeSelector(state => state.currency)
+  const {fetchCurrency} = useAction()
 
   useEffect(() => {
-    fetchValute()
+    fetchCurrency()
   }, [])
 
-  async function fetchValute() {
-    try {
-      let result = await axios.get(`https://www.cbr-xml-daily.ru/daily_json.js`)
-      setCbr(result.data.Valute)
-    } catch (e) {
-      console.log(e)
-    }
+
+  if (loading) {
+    return <div>Идет загрузка</div>
   }
 
+  if (error) {
+    return <h1>Упс произошла ошибка {error}</h1>
+  }
 
   return (
     <div className="App">
-      <FinanceList curs={cbr}/>
+      <FinanceList curs={currency}/>
       <Input/>
     </div>
   );

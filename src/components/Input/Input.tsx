@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-const Input: FC = ()=>{
+const Input: FC = () => {
   return <input/>
 }
 

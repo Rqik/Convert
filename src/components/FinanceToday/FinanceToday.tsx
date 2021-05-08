@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
-import './financeToday.scss'
-import {Number, priceChange} from '../number/number';
+import {Number, priceChange} from '../Number/Number';
 
 export interface FinanceTodayProps {
   Name: string,

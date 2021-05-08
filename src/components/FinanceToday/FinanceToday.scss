@@ -51,11 +51,12 @@
     gap: 35px;
   }
   &__ratio{
-    @include font-normal(12px, $fw:700  , $fc:$font-secondary-color)
     margin-left: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    @include font-normal(12px, $fw:700  , $fc:$font-secondary-color);
+
     &-span{
       border-bottom: 1px solid $font-main-color;
     }

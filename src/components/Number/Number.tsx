@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import './number.scss'
+import './Number.scss'
 export type priceChange = 'increased' | 'decreased'
 type size = 'font-big' | 'font-small'
 interface NumberProps {

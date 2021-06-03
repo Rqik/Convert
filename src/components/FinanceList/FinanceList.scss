@@ -1,6 +1,8 @@
-.finance-list{
+.finance-list {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 15px 0;
+  width: 100%;
   gap: 15px 15px;
 }

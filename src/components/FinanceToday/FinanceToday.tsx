@@ -1,20 +1,26 @@
-import React, {FC} from 'react';
-import {Number, priceChange} from '../Number/Number';
+import React, { FC, ReactElement } from 'react';
+import { Number, priceChange } from '../Number/Number';
 
 export interface FinanceTodayProps {
-  Name: string,
-  CharCode: string,
-  Value: number,
-  Previous: number,
-  Nominal: number
+  Name: string;
+  CharCode: string;
+  Value: number;
+  Previous: number;
+  Nominal: number;
 }
 
-const FinanceToday: FC<FinanceTodayProps> = ({Name, CharCode, Value, Previous, Nominal}) => {
+function FinanceToday({
+  Name,
+  CharCode,
+  Value,
+  Previous,
+  Nominal,
+}: FinanceTodayProps): ReactElement {
+  const valueChange: priceChange = Value < Previous ? 'decreased' : 'increased';
+  // const previousChange: priceChange =
+  //   Value > Previous ? 'decreased' : 'increased';
+  const difference = Math.round((Value - Previous) * 10000) / 10000;
 
-
-  let valueChange: priceChange = Value < Previous ? 'decreased' : 'increased'
-  let previousChange: priceChange = Value > Previous ? 'decreased' : 'increased'
-  let difference = Math.round((Value - Previous) * 10000) / 10000
   return (
     <div className="finance">
       <div className="finance__currency">
@@ -24,21 +30,26 @@ const FinanceToday: FC<FinanceTodayProps> = ({Name, CharCode, Value, Previous, N
 
       <div className="finance__current-value">
         <div className="finance__today">
-          <Number number={Value} difference={difference}
-                  priceChange={valueChange}/>
+          <Number
+            number={Value}
+            difference={difference}
+            priceChange={valueChange}
+          />
           <div className="finance__caption">цена сегодня</div>
         </div>
         <div className="finance__tomorrow">
-          <Number number={Previous} size="font-small"/>
+          <Number number={Previous} size="font-small" />
           <div className="finance__caption">цена вчера</div>
         </div>
         <div className="finance__ratio">
-          <div className="finance__ratio-span">{Nominal+ CharCode}</div>
-          1RUB
+          <div className="finance__ratio-span">
+            {`${Nominal}&nbsp;${CharCode}`}
+          </div>
+          1 RUB
         </div>
       </div>
-
-    </div>)
+    </div>
+  );
 }
 
-export {FinanceToday}
+export { FinanceToday };

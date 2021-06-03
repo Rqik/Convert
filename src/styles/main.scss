@@ -1,4 +1,11 @@
-@import "../assets/fonts/raleway";
-@import "../assets/fonts/lato";
-@import "variables";
-@import "mixin";
+@import 'variables';
+@import 'mixin';
+@import '../assets/fonts/stylesheet.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}

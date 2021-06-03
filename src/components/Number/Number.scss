@@ -3,6 +3,7 @@
 
 .number {
   @include font-bold(22px);
+
   display: flex;
   align-items: flex-end;
   align-self: flex-start;
@@ -15,17 +16,21 @@
   &_decreased {
     color: $color-decreased;
   }
-  &_font{
-    &-big{
+
+  &_font {
+    &-big {
       font-size: 32px;
     }
-    &-small{
+
+    &-small {
       font-size: 16px;
     }
   }
+
   &__difference {
     @include font-normal(14px, $fc: inherit);
-    line-height: 22px;
+
     margin-left: 10px;
+    line-height: 22px;
   }
 }

@@ -1,4 +1,4 @@
-import './FinanceList.scss'
-import {FinanceList} from './FinanceList'
+import './FinanceList.scss';
+import { FinanceList } from './FinanceList';
 
-export {FinanceList}
+export { FinanceList };

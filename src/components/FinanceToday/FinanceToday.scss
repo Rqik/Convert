@@ -1,65 +1,68 @@
-@import "src/styles/mixin";
-@import "src/styles/variables";
+@import 'src/styles/mixin';
+@import 'src/styles/variables';
 
 .finance {
-  background-color: $main-color-block;
-  border-radius: 12px;
-  box-shadow: -2px -2px 10px rgba(11, 174, 244, 0.21), 2px 2px 7px rgba(109, 74, 249, 0.36);
-
-  width: 100%;
-  flex-basis: 320px;
-  //max-width: 320px;
-  justify-content: space-between;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
   @include font-medium(14px);
 
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 320px;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 12px;
+  width: 100%;
+  box-shadow:
+    -2px -2px 10px rgba(11, 174, 244, 0.21),
+    2px 2px 7px rgba(109, 74, 249, 0.36);
+  background-color: $main-color-block;
+
   &__currency {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    position: relative;
     padding: 10px 15px;
   }
 
   &__name {
+    overflow: hidden;
+    max-width: 100%;
     word-wrap: break-word;
     white-space: nowrap;
-    max-width: 100%;
-    overflow: hidden;
     text-overflow: ellipsis;
   }
 
   &__abbreviation {
-    //width: 100%;
+    @include font-normal($fs: 14px, $fw: 700, $fc: #4daae7);
+
     margin-left: 10px;
     text-transform: uppercase;
-    @include font-normal($fs: 14px, $fw: 700, $fc: #4daae7)
   }
-  &__caption{
-    white-space: nowrap;
-    @include font-normal($fs: 12px, $fw: 300, $fc: $font-secondary-color);
-  }
-  &__current-value {
 
+  &__caption {
+    @include font-normal($fs: 12px, $fw: 300, $fc: $font-secondary-color);
+
+    white-space: nowrap;
+  }
+
+  &__current-value {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     padding: 10px 15px;
-
     gap: 35px;
   }
-  &__ratio{
-    margin-left: auto;
+
+  &__ratio {
+    @include font-normal(12px, $fw: 700, $fc: $font-secondary-color);
+
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    @include font-normal(12px, $fw:700  , $fc:$font-secondary-color);
+    margin-left: auto;
 
-    &-span{
+    &-span {
       border-bottom: 1px solid $font-main-color;
     }
   }
-
 }

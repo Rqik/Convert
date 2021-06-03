@@ -1,7 +1,7 @@
-import React, {FC} from 'react';
+import React, { ReactElement } from 'react';
 
-const Input: FC = () => {
-  return <input/>
+function Input(): ReactElement {
+  return <input />;
 }
 
-export {Input}
+export { Input };

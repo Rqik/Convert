@@ -1,21 +1,22 @@
-
-@mixin font-normal($fs: 18px , $fw: normal , $fc: black){
-  font-family: Lato , Helvetica ,Arial,  sans-serif;
-  font-size: $fs;
-  font-style: normal;
+@mixin font-normal($fs: 18px, $fw: normal, $fc: black, $lh: auto) {
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
   font-weight: $fw;
+  font-style: normal;
+  font-size: $fs;
+  line-height: $lh;
   color: $fc;
 }
 
-@mixin font-medium ($fs: 18px ){
-  font-family: Lato , Helvetica ,Arial,  sans-serif;
-  font-size: $fs;
-  font-style: normal;
+@mixin font-medium($fs: 18px) {
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
   font-weight: normal;
-}
-@mixin font-bold ($fs: 18px ){
-  font-family: Lato , Helvetica ,Arial,  sans-serif;
-  font-size: $fs;
   font-style: normal;
+  font-size: $fs;
+}
+
+@mixin font-bold($fs: 18px) {
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
   font-weight: bold;
+  font-style: normal;
+  font-size: $fs;
 }
